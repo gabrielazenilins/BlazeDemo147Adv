@@ -1,0 +1,27 @@
+Instação Padrão do playwright:
+npm init playwright@latest
+
+Nosso projeto utilizará as seguintes abordagens:
+-Separação dos cenários de negócio dos scripts de automação
+    - Vamos precisar de no mínimo de 2 arquivos //O normal é 1 para 1
+    ---> pasta features, que contem os arquivos 
+        .feature // Conter as Funcinalidades e Cenários de Negócio / Critérios de aceitação/ Dados
+    --->pasta steps, que contém arquivos
+         .spec.js // Script de automação de teste
+    
+    Instaçaões adicionais:
+    //Instala o pacote que dá suporte ao bdd
+    //BDD = Desenvolvimento Direcio por Comportamento ( Melhorar a comunicação)
+    npm install -D playwright-bdd
+    
+
+    Feature: Login
+        Scenario: Login with Success
+            Given
+            When
+            Then
+
+    Funcionalidade
+        Cenario: Login com Sucesso
+        DadosQuando
+        Entao
