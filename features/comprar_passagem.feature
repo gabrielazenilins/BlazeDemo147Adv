@@ -14,11 +14,11 @@ Feature: Compra de Passagem
         And se exibe oa mensagem de agradecimento  "Thank you for your purchase today!"
         And se contem a informação "Amount"como "555 USD"
 
-    Scenario:Compra com Sucesso DDT 
+    Scenario Outline:Compra com Sucesso DDT 
         Given que estou no site Blazedemo
         When  seleciono a "<origem>" e o "<destino>"
         Then verifico o texto Flights from "<origem>" to "<destino>"
-         And se a URL contem "reserve"
+        And se a URL contem "reserve"
         When seleciono o voo "<voo>" da companhia "<companhia>" 
         Then verifico se a url contem "purchase"
         When preencho o nome como "<nome>" 
@@ -26,7 +26,7 @@ Feature: Compra de Passagem
         And marco a opção "remember me"
         And clico no botão "Purchase Flight"
         Then verfico se a url contem "confirmation"
-        And se exibe oa mensagem de agradecimento  "Thank you for your purchase today!"
+        And se exibe o mensagem de agradecimento  "Thank you for your purchase today!"
         And se contem a informação "Amount"como "<preco>
 
         Examples:
