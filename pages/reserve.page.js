@@ -4,6 +4,7 @@ export default class ReservePage {
         this.page = page
         this.title = 'h3'
         this.url = '/reserve\.php/'
+        
     }
 
     async select_flights(flight, airline){
@@ -11,6 +12,16 @@ export default class ReservePage {
     }
     //Eu nao menciono aqui no constructor origin e destination para forçar a continuidade de bater o nome
     async verify_destination(origin, destination){
+        await this.page.waitForSelector(this.title)
+        const titleSection = await this.page.textContent(this.title)
+
+        if(!titleSection.includes(`Flights from ${origin} to ${destination}:`)){
+            throw new Error('Titulo da pagina Reserve ausente ou diferente do esperado')
+
+        }
+
+    }
+    async verify_destination(message_origin_destination){
         await this.page.waitForSelector(this.title)
         const titleSection = await this.page.textContent(this.title)
 

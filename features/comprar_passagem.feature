@@ -1,7 +1,9 @@
 Feature: Compra de Passagem
     Scenario: Compra com Sucesso 
         Given que estou no site Blazedemo
-        When  seleciono a origem como "São Paolo" e o destino como "London"
+        When  seleciono a origem como "São Paolo" 
+        And o destino como "London"
+        And clico no botao "Find Flights"
         Then verifico o texto "Flights from São Paolo to London:"
         And se a URL contem "reserve"
         When seleciono o voo "9696" da companhia "Aer Lingus"
@@ -16,7 +18,9 @@ Feature: Compra de Passagem
 
     Scenario Outline:Compra com Sucesso DDT 
         Given que estou no site Blazedemo
-        When  seleciono a "<origin>" e o "<destination>"
+        When seleciono a origem como "<origin>" 
+        And seleciono o destino como "<destination>"
+        And clico no botao "Find Flights"
         Then verifico o texto Flights from "<origin>" to "<destination>"
         And se a URL contem "reserve"
         When seleciono o voo "<flight>" da companhia "<airline>" 
@@ -27,7 +31,7 @@ Feature: Compra de Passagem
         And clico no botão "Purchase Flight"
         Then verfico se a url contem "confirmation"
         And se exibe o mensagem de agradecimento  "Thank you for your purchase today!"
-        And se contem a informação "Amount"como "<price>
+        And se contem a informação "Amount"como "<price>"
 
         Examples:
         |   origin  | destination  | flight  |   airline     | name            |  cardType         | price  |

@@ -1,41 +1,42 @@
 export default class HomePage {
-   // Construtor com o mapeamento dos elementos/atributos
-    constructor(page){
-        this.page=page // o objeto do playwright interno recebe o objeto do playeright externo
-        this.title='h1'
-        this.origin='[name="fromPort"]'
-        this.destination='[name="toPort"]'
-        this.btnFindFlights='.btn_primary'
-        this.url= 'https://blazedemo.com'
 
+    constructor(page){
+        this.page = page
+        this.title = 'h1'
+        this.origin = '[name="fromPort"]'
+        this.destination = '[name="toPort"]'
+        this.btnFindFlights = '.btn-primary'
+        this.url = 'https://www.blazedemo.com'
     }
-    //Mapear as ações
+
+    // Actions
 
     async select_origin(city_origin) {
         await this.page.locator(this.origin).selectOption(city_origin)
-
     }
-    async select_destiny(city_destination) {
+
+    async select_destination(city_destination) {
         await this.page.locator(this.destination).selectOption(city_destination)
-
     }
+
+    // Click using selector (no parameter)
     async click_find_flights(){
         await this.page.locator(this.btnFindFlights).click()
     }
 
-    // Jeito "Rebelde"- Verificação dentro do mapeamento
+    // Click using button text (parameter)
+    async click_find_flights_by_text(button_text){
+        await this.page.getByRole('button', { name: button_text }).click()
+    }
 
-    async verify_welcome_message (){
-        // Espera o seletor indicado carregar, que seria o texto que serve de título da página
-        await this.page.waitForSelector (this.title) 
-        // Extrai o texto que estiver no elemento e guardar a constante page_title
+    // Validation (your "rebel" style)
+    async verify_welcome_message(){
+        await this.page.waitForSelector(this.title)
+
         const page_title = await this.page.textContent(this.title)
-        
-        if(!page_title.includes('Welcome to the Simple Travel Agency!')) {
-            // o que fazer quando falha
-            throw new Error('Titulo da Home ausente ou diferente do esperado')
-        }
-            
 
+        if(!page_title.includes('Welcome to the Simple Travel Agency!')){
+            throw new Error('Home title missing or incorrect')
+        }
     }
 }
