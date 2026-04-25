@@ -11,13 +11,12 @@ export default class HomePage {
 
     // Actions
 
-    async select_origin(city_origin) {
+    async select_route(city_origin, city_destination){
         await this.page.locator(this.origin).selectOption(city_origin)
-    }
-
-    async select_destination(city_destination) {
         await this.page.locator(this.destination).selectOption(city_destination)
+
     }
+   
 
     // Click using selector (no parameter)
     async click_find_flights(){

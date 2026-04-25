@@ -5,6 +5,7 @@ Feature: Compra de Passagem
         And o destino como "London"
         And clico no botao "Find Flights"
         Then verifico o texto "Flights from São Paolo to London:"
+        And clico no botao "Find Flights"
         And se a URL contem "reserve"
         When seleciono o voo "9696" da companhia "Aer Lingus"
         Then verifico se a url contem "purchase"

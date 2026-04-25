@@ -13,13 +13,9 @@ Given('que estou no site Blazedemo', function ({page}) {
 });
 
 
-When('seleciono a origem como {string}', function (origin) {
-    HomePage.select_origin(city_origin)
-});
-
-And ('seleciono o destino como {string', function (destination){
-    HomePage.select_destination(destination)
-});
+When('seleciono a origem como {string} e o destino como {string}', async function (origin, destination) {
+    await homePage.select_route(origin, destination)
+})
 
 // Versão que clica no botão a partir do texto escrito no botão
 And('clico no botao {string}', function (texto_botao) {
