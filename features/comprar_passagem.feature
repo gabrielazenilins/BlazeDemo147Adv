@@ -31,7 +31,7 @@ Feature: Compra de Passagem
         And marco a opção "remember me"
         And clico no botão "Purchase Flight"
         Then verfico se a url contem "confirmation"
-        And se exibe o mensagem de agradecimento  "Thank you for your purchase today!"
+        And se exibe a mensagem de agradecimento  "Thank you for your purchase today!"
         And se contem a informação "Amount"como "<price>"
 
         Examples:

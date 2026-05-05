@@ -4,7 +4,9 @@ export default class ConfirmationPage{
         this.page = page
         this.url = '/confirmation\.php/'
         this.message ='h1'
-        this.price = "Amount"
+        this.price = 'Amount'
     }
+    
+
     
 }

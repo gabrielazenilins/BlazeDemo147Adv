@@ -10,6 +10,7 @@ export default class ReservePage {
     async select_flights(flight, airline){
         await this.page.getByRole('row',{name: `Choose This Flight ${flight} ${airline}`}).getByRole('button').click()
     }
+    
     //Eu nao menciono aqui no constructor origin e destination para forçar a continuidade de bater o nome
     async verify_destination(origin, destination){
         await this.page.waitForSelector(this.title)
