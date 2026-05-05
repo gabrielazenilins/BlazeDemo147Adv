@@ -43,7 +43,7 @@ Estrutura inicial de Page Objects para as páginas da aplicação
 
 🔗 Relação com o Projeto Básico
 Este projeto implementa o mesmo cenário da versão básica disponível em:
-[BlazeDemo147 (versão básica)](https://github.com/seu-usuario/BlazeDemo147)
+[BlazeDemo147 (versão básica)](https://github.com/gabrielazenilins/BlazeDemo147)
 
 
 No entanto, em vez de evoluir o mesmo código, este repositório foi criado para explorar uma abordagem diferente e mais estruturada de automação de testes.
