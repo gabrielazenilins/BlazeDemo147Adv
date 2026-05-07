@@ -1,4 +1,7 @@
-export default class HomePage {
+
+// export default class HomePage { //padrao para type = module
+class HomePage { //padrão para type = commonjs
+
 
     constructor(page){
         this.page = page
@@ -39,3 +42,5 @@ export default class HomePage {
         }
     }
 }
+
+module.exports = HomePage //padrão quando tpe = commonjs

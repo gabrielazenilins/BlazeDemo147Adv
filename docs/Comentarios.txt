@@ -48,3 +48,12 @@ Em um projeto simples, cada teste é um arquivo .spec.js diferente
 Em um projeto com Gherkin, cada teste é composto por um arquivo .feature + um arquivo steps.js
 
 export default class HomePage tem que começar com o Maiusculo
+
+ "@types/node": "^25.5.2",
+    "cucumber-html-reporter": "^7.2.0",
+    "playwright-bdd": "^8.5.0"
+    para fazer o teste, sempre escrever npm run zzzzz
+
+    Diferenças de sintaxe conforme o type definido no package.json
+    quando se coloca commonjs: ele quer que voce use const....= require ('...')
+    quando se trabalha como module, ele quer que voce faça um import .... from ....

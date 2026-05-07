@@ -1,36 +1,34 @@
 // @ts-check
 import { defineConfig, devices } from '@playwright/test';
 
-/**
- * Read environment variables from file.
- * https://github.com/motdotla/dotenv
- */
-// import dotenv from 'dotenv';
-// import path from 'path';
-// dotenv.config({ path: path.resolve(__dirname, '.env') });
-
-/**
- * @see https://playwright.dev/docs/test-configuration
- */
-export default defineConfig({
-  testDir: './tests',
+module.exports =  defineConfig({ 
+  testDir: './tests', // se aplica apenas aos testes simples
+  timeout: 60000, // tempo maximo de execucao, ou 60_000 nao pode usar ponto ou 60*1000
   /* Run tests in files in parallel */
-  fullyParallel: true,
+  fullyParallel: true, //quer executar os testes simultaneamente ou nao
   /* Fail the build on CI if you accidentally left test.only in the source code. */
-  forbidOnly: !!process.env.CI,
+  forbidOnly: !!process.env.CI, // se falhar ele nao vai colocar como um teste pronto para execução
   /* Retry on CI only */
   retries: process.env.CI ? 2 : 0,
   /* Opt out of parallel tests on CI. */
   workers: process.env.CI ? 1 : undefined,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
-  reporter: 'html',
+  reporter: [
+      ['list'],
+      ['html', { open: 'never', outputFolder: 'playwright-report'}]
+  ],
+
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     /* Base URL to use in actions like `await page.goto('')`. */
     // baseURL: 'http://localhost:3000',
+    baseURL: 'https//www.blazedemo.com',
+    headless: process.env.HEADLESS !== 'false',
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on-first-retry',
+    screenshot: 'only-on-failure',
+    video: 'retain-on-failure'
   },
 
   /* Configure projects for major browsers */

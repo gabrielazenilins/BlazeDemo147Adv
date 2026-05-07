@@ -1,8 +1,9 @@
-import {Given, When, Then, And} from '@cucumber/cucumber'
-import HomePage from '../pages/home.page'
-import ReservePage from '../pages/reserve.page'
-import PurchasePage from '../pages/purchase.page'
-import ConfirmationPage from '../pages/confirmation.page'
+const { Given, When, Then } = require('@cucumber/cucumber')
+// import {Given, When, Then, And} from '@cucumber/cucumber'
+// import HomePage from '../pages/home.page'
+// import ReservePage from '../pages/reserve.page'
+// import PurchasePage from '../pages/purchase.page'
+// import ConfirmationPage from '../pages/confirmation.page'
 
 //Home 
 Given('que estou no site Blazedemo', function ({page}) {
@@ -16,13 +17,13 @@ When('seleciono a origem como {string} e o destino como {string}', async functio
 })
 
 // Versão que clica no botão a partir do texto escrito no botão
-And('clico no botao {string}', function (texto_botao) {
+When('clico no botao {string}', function (texto_botao) {
     HomePage.click_find_flights(texto_botao)
 });
  
 // Exemplo conforme o cenário simples (sem o texto "Find Flghts")
 // Se for sempre clicar no botão olhando apenas o seletor
-And('clico no botao', function () {
+When('clico no botao', function () {
     // Não precisari ter recebido o parametro, seria só dar instrução de clicar
     HomePage.click_find_flights()
 });
