@@ -1,8 +1,7 @@
 Feature: Compra de Passagem
     Scenario: Compra com Sucesso 
         Given que estou no site Blazedemo
-        When  seleciono a origem como "São Paolo" 
-        And o destino como "London"
+        When seleciono a origem como "São Paolo" e seleciono o destino como "London"
         And clico no botao "Find Flights"
         Then verifico o texto "Flights from São Paolo to London:"
         And clico no botao "Find Flights"
@@ -19,8 +18,7 @@ Feature: Compra de Passagem
 
     Scenario Outline:Compra com Sucesso DDT 
         Given que estou no site Blazedemo
-        When seleciono a origem como "<origin>" 
-        And seleciono o destino como "<destination>"
+        When seleciono a origem como "<origin>" e seleciono o destino como "<destination>"
         And clico no botao "Find Flights"
         Then verifico o texto Flights from "<origin>" to "<destination>"
         And se a URL contem "reserve"

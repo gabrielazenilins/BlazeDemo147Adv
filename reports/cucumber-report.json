@@ -10,60 +10,84 @@
         "name": "Compra com Sucesso",
         "steps": [
           {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 199954600
+            }
+          },
+          {
             "arguments": [],
             "keyword": "Given ",
             "line": 3,
             "name": "que estou no site Blazedemo",
+            "match": {
+              "location": "steps\\comprar_passagem.steps.js:10"
+            },
             "result": {
-              "status": "undefined",
-              "duration": 0
+              "status": "passed",
+              "duration": 1036331699
             }
           },
           {
             "arguments": [],
             "keyword": "When ",
             "line": 4,
-            "name": "seleciono a origem como \"São Paolo\" e o destino como \"London\"",
+            "name": "seleciono a origem como \"São Paolo\" e seleciono o destino como \"London\"",
+            "match": {
+              "location": "steps\\comprar_passagem.steps.js:15"
+            },
             "result": {
-              "status": "undefined",
-              "duration": 0
+              "status": "passed",
+              "duration": 16051199
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 5,
+            "name": "clico no botao \"Find Flights\"",
+            "match": {
+              "location": "steps\\comprar_passagem.steps.js:21"
+            },
+            "result": {
+              "status": "failed",
+              "duration": 20014536100,
+              "error_message": "Error: function timed out, ensure the promise resolves within 20000 milliseconds\n    at Timeout.<anonymous> (C:\\Iterasys\\BlazeDemo147Adv\\node_modules\\@cucumber\\cucumber\\lib\\time.js:64:20)\n    at listOnTimeout (node:internal/timers:605:17)\n    at process.processTimers (node:internal/timers:541:7)"
             }
           },
           {
             "arguments": [],
             "keyword": "Then ",
-            "line": 5,
+            "line": 6,
             "name": "verifico o texto \"Flights from São Paolo to London:\"",
+            "match": {
+              "location": "steps\\comprar_passagem.steps.js:33"
+            },
             "result": {
-              "status": "undefined",
+              "status": "skipped",
               "duration": 0
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
-            "line": 6,
-            "name": "se a URL contem \"reserve\"",
-            "result": {
-              "status": "undefined",
-              "duration": 0
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "When ",
             "line": 7,
-            "name": "seleciono o voo \"9696\" da companhia \"Aer Lingus\"",
+            "name": "clico no botao \"Find Flights\"",
+            "match": {
+              "location": "steps\\comprar_passagem.steps.js:21"
+            },
             "result": {
-              "status": "undefined",
+              "status": "skipped",
               "duration": 0
             }
           },
           {
             "arguments": [],
-            "keyword": "Then ",
+            "keyword": "And ",
             "line": 8,
-            "name": "verifico se a url contem \"purchase\"",
+            "name": "se a URL contem \"reserve\"",
             "result": {
               "status": "undefined",
               "duration": 0
@@ -73,29 +97,38 @@
             "arguments": [],
             "keyword": "When ",
             "line": 9,
-            "name": "preencho o nome como \"Charlie Brown\"",
+            "name": "seleciono o voo \"9696\" da companhia \"Aer Lingus\"",
+            "match": {
+              "location": "steps\\comprar_passagem.steps.js:46"
+            },
             "result": {
-              "status": "undefined",
+              "status": "skipped",
               "duration": 0
             }
           },
           {
             "arguments": [],
-            "keyword": "And ",
+            "keyword": "Then ",
             "line": 10,
-            "name": "seleciono a bandeira do cartão como \"amex\"",
+            "name": "verifico se a url contem \"purchase\"",
+            "match": {
+              "location": "steps\\comprar_passagem.steps.js:39"
+            },
             "result": {
-              "status": "undefined",
+              "status": "skipped",
               "duration": 0
             }
           },
           {
             "arguments": [],
-            "keyword": "And ",
+            "keyword": "When ",
             "line": 11,
-            "name": "marco a opção \"remember me\"",
+            "name": "preencho o nome como \"Charlie Brown\"",
+            "match": {
+              "location": "steps\\comprar_passagem.steps.js:54"
+            },
             "result": {
-              "status": "undefined",
+              "status": "skipped",
               "duration": 0
             }
           },
@@ -103,19 +136,25 @@
             "arguments": [],
             "keyword": "And ",
             "line": 12,
-            "name": "clico no botão \"Purchase Flight\"",
+            "name": "seleciono a bandeira do cartão como \"amex\"",
+            "match": {
+              "location": "steps\\comprar_passagem.steps.js:59"
+            },
             "result": {
-              "status": "undefined",
+              "status": "skipped",
               "duration": 0
             }
           },
           {
             "arguments": [],
-            "keyword": "Then ",
+            "keyword": "And ",
             "line": 13,
-            "name": "verfico se a url contem \"confirmation\"",
+            "name": "marco a opção \"remember me\"",
+            "match": {
+              "location": "steps\\comprar_passagem.steps.js:64"
+            },
             "result": {
-              "status": "undefined",
+              "status": "skipped",
               "duration": 0
             }
           },
@@ -123,6 +162,29 @@
             "arguments": [],
             "keyword": "And ",
             "line": 14,
+            "name": "clico no botão \"Purchase Flight\"",
+            "match": {
+              "location": "steps\\comprar_passagem.steps.js:70"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 15,
+            "name": "verfico se a url contem \"confirmation\"",
+            "result": {
+              "status": "undefined",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 16,
             "name": "se exibe oa mensagem de agradecimento  \"Thank you for your purchase today!\"",
             "result": {
               "status": "undefined",
@@ -132,12 +194,20 @@
           {
             "arguments": [],
             "keyword": "And ",
-            "line": 15,
+            "line": 17,
             "name": "se contem a informação \"Amount\"como \"555 USD\"",
             "result": {
               "status": "undefined",
               "duration": 0
             }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 88295200
+            }
           }
         ],
         "tags": [],
@@ -146,44 +216,75 @@
       {
         "description": "",
         "id": "compra-de-passagem;compra-com-sucesso-ddt",
-        "keyword": "Scenario",
-        "line": 34,
+        "keyword": "Scenario Outline",
+        "line": 37,
         "name": "Compra com Sucesso DDT",
         "steps": [
           {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 145888699
+            }
+          },
+          {
             "arguments": [],
             "keyword": "Given ",
-            "line": 18,
+            "line": 20,
             "name": "que estou no site Blazedemo",
+            "match": {
+              "location": "steps\\comprar_passagem.steps.js:10"
+            },
             "result": {
-              "status": "undefined",
-              "duration": 0
+              "status": "passed",
+              "duration": 1406724100
             }
           },
           {
             "arguments": [],
             "keyword": "When ",
-            "line": 19,
-            "name": "seleciono a \"São Paolo\" e o \"London\"",
+            "line": 21,
+            "name": "seleciono a origem como \"São Paolo\" e seleciono o destino como \"London\"",
+            "match": {
+              "location": "steps\\comprar_passagem.steps.js:15"
+            },
             "result": {
-              "status": "undefined",
-              "duration": 0
+              "status": "passed",
+              "duration": 14720099
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 22,
+            "name": "clico no botao \"Find Flights\"",
+            "match": {
+              "location": "steps\\comprar_passagem.steps.js:21"
+            },
+            "result": {
+              "status": "failed",
+              "duration": 20025001300,
+              "error_message": "Error: function timed out, ensure the promise resolves within 20000 milliseconds\n    at Timeout.<anonymous> (C:\\Iterasys\\BlazeDemo147Adv\\node_modules\\@cucumber\\cucumber\\lib\\time.js:64:20)\n    at listOnTimeout (node:internal/timers:605:17)\n    at process.processTimers (node:internal/timers:541:7)"
             }
           },
           {
             "arguments": [],
             "keyword": "Then ",
-            "line": 20,
+            "line": 23,
             "name": "verifico o texto Flights from \"São Paolo\" to \"London\"",
+            "match": {
+              "location": "steps\\comprar_passagem.steps.js:90"
+            },
             "result": {
-              "status": "undefined",
+              "status": "skipped",
               "duration": 0
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
-            "line": 21,
+            "line": 24,
             "name": "se a URL contem \"reserve\"",
             "result": {
               "status": "undefined",
@@ -193,67 +294,85 @@
           {
             "arguments": [],
             "keyword": "When ",
-            "line": 22,
+            "line": 25,
             "name": "seleciono o voo \"9696\" da companhia \"Aer Lingus\"",
+            "match": {
+              "location": "steps\\comprar_passagem.steps.js:46"
+            },
             "result": {
-              "status": "undefined",
+              "status": "skipped",
               "duration": 0
             }
           },
           {
             "arguments": [],
             "keyword": "Then ",
-            "line": 23,
+            "line": 26,
             "name": "verifico se a url contem \"purchase\"",
+            "match": {
+              "location": "steps\\comprar_passagem.steps.js:39"
+            },
             "result": {
-              "status": "undefined",
+              "status": "skipped",
               "duration": 0
             }
           },
           {
             "arguments": [],
             "keyword": "When ",
-            "line": 24,
+            "line": 27,
             "name": "preencho o nome como \"Charlie Brown\"",
+            "match": {
+              "location": "steps\\comprar_passagem.steps.js:54"
+            },
             "result": {
-              "status": "undefined",
+              "status": "skipped",
               "duration": 0
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
-            "line": 25,
+            "line": 28,
             "name": "seleciono a bandeira do cartão como \"Visa\"",
+            "match": {
+              "location": "steps\\comprar_passagem.steps.js:59"
+            },
             "result": {
-              "status": "undefined",
+              "status": "skipped",
               "duration": 0
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
-            "line": 26,
+            "line": 29,
             "name": "marco a opção \"remember me\"",
+            "match": {
+              "location": "steps\\comprar_passagem.steps.js:64"
+            },
             "result": {
-              "status": "undefined",
+              "status": "skipped",
               "duration": 0
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
-            "line": 27,
+            "line": 30,
             "name": "clico no botão \"Purchase Flight\"",
+            "match": {
+              "location": "steps\\comprar_passagem.steps.js:70"
+            },
             "result": {
-              "status": "undefined",
+              "status": "skipped",
               "duration": 0
             }
           },
           {
             "arguments": [],
             "keyword": "Then ",
-            "line": 28,
+            "line": 31,
             "name": "verfico se a url contem \"confirmation\"",
             "result": {
               "status": "undefined",
@@ -263,21 +382,32 @@
           {
             "arguments": [],
             "keyword": "And ",
-            "line": 29,
-            "name": "se exibe oa mensagem de agradecimento  \"Thank you for your purchase today!\"",
+            "line": 32,
+            "name": "se exibe a mensagem de agradecimento  \"Thank you for your purchase today!\"",
+            "match": {
+              "location": "steps\\comprar_passagem.steps.js:77"
+            },
             "result": {
-              "status": "undefined",
+              "status": "skipped",
               "duration": 0
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
-            "line": 30,
-            "name": "se contem a informação \"Amount\"como \"555 USD",
+            "line": 33,
+            "name": "se contem a informação \"Amount\"como \"555 USD\"",
             "result": {
               "status": "undefined",
               "duration": 0
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 71996400
             }
           }
         ],
@@ -287,44 +417,75 @@
       {
         "description": "",
         "id": "compra-de-passagem;compra-com-sucesso-ddt",
-        "keyword": "Scenario",
-        "line": 35,
+        "keyword": "Scenario Outline",
+        "line": 38,
         "name": "Compra com Sucesso DDT",
         "steps": [
           {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 170194300
+            }
+          },
+          {
             "arguments": [],
             "keyword": "Given ",
-            "line": 18,
+            "line": 20,
             "name": "que estou no site Blazedemo",
+            "match": {
+              "location": "steps\\comprar_passagem.steps.js:10"
+            },
             "result": {
-              "status": "undefined",
-              "duration": 0
+              "status": "passed",
+              "duration": 951180499
             }
           },
           {
             "arguments": [],
             "keyword": "When ",
-            "line": 19,
-            "name": "seleciono a \"Portland\" e o \"Dublin\"",
+            "line": 21,
+            "name": "seleciono a origem como \"Portland\" e seleciono o destino como \"Dublin\"",
+            "match": {
+              "location": "steps\\comprar_passagem.steps.js:15"
+            },
             "result": {
-              "status": "undefined",
-              "duration": 0
+              "status": "passed",
+              "duration": 14101699
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 22,
+            "name": "clico no botao \"Find Flights\"",
+            "match": {
+              "location": "steps\\comprar_passagem.steps.js:21"
+            },
+            "result": {
+              "status": "failed",
+              "duration": 20006618899,
+              "error_message": "Error: function timed out, ensure the promise resolves within 20000 milliseconds\n    at Timeout.<anonymous> (C:\\Iterasys\\BlazeDemo147Adv\\node_modules\\@cucumber\\cucumber\\lib\\time.js:64:20)\n    at listOnTimeout (node:internal/timers:605:17)\n    at process.processTimers (node:internal/timers:541:7)"
             }
           },
           {
             "arguments": [],
             "keyword": "Then ",
-            "line": 20,
+            "line": 23,
             "name": "verifico o texto Flights from \"Portland\" to \"Dublin\"",
+            "match": {
+              "location": "steps\\comprar_passagem.steps.js:90"
+            },
             "result": {
-              "status": "undefined",
+              "status": "skipped",
               "duration": 0
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
-            "line": 21,
+            "line": 24,
             "name": "se a URL contem \"reserve\"",
             "result": {
               "status": "undefined",
@@ -334,67 +495,85 @@
           {
             "arguments": [],
             "keyword": "When ",
-            "line": 22,
+            "line": 25,
             "name": "seleciono o voo \"12\" da companhia \"Virgin America\"",
+            "match": {
+              "location": "steps\\comprar_passagem.steps.js:46"
+            },
             "result": {
-              "status": "undefined",
+              "status": "skipped",
               "duration": 0
             }
           },
           {
             "arguments": [],
             "keyword": "Then ",
-            "line": 23,
+            "line": 26,
             "name": "verifico se a url contem \"purchase\"",
+            "match": {
+              "location": "steps\\comprar_passagem.steps.js:39"
+            },
             "result": {
-              "status": "undefined",
+              "status": "skipped",
               "duration": 0
             }
           },
           {
             "arguments": [],
             "keyword": "When ",
-            "line": 24,
-            "name": "preencho o nome como \"Harry Potter\"",
-            "result": {
-              "status": "undefined",
-              "duration": 0
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 25,
-            "name": "seleciono a bandeira do cartão como \"American Express\"",
-            "result": {
-              "status": "undefined",
-              "duration": 0
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 26,
-            "name": "marco a opção \"remember me\"",
-            "result": {
-              "status": "undefined",
-              "duration": 0
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
             "line": 27,
-            "name": "clico no botão \"Purchase Flight\"",
+            "name": "preencho o nome como \"Harry Potter\"",
+            "match": {
+              "location": "steps\\comprar_passagem.steps.js:54"
+            },
             "result": {
-              "status": "undefined",
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 28,
+            "name": "seleciono a bandeira do cartão como \"American Express\"",
+            "match": {
+              "location": "steps\\comprar_passagem.steps.js:59"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 29,
+            "name": "marco a opção \"remember me\"",
+            "match": {
+              "location": "steps\\comprar_passagem.steps.js:64"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 30,
+            "name": "clico no botão \"Purchase Flight\"",
+            "match": {
+              "location": "steps\\comprar_passagem.steps.js:70"
+            },
+            "result": {
+              "status": "skipped",
               "duration": 0
             }
           },
           {
             "arguments": [],
             "keyword": "Then ",
-            "line": 28,
+            "line": 31,
             "name": "verfico se a url contem \"confirmation\"",
             "result": {
               "status": "undefined",
@@ -404,21 +583,32 @@
           {
             "arguments": [],
             "keyword": "And ",
-            "line": 29,
-            "name": "se exibe oa mensagem de agradecimento  \"Thank you for your purchase today!\"",
+            "line": 32,
+            "name": "se exibe a mensagem de agradecimento  \"Thank you for your purchase today!\"",
+            "match": {
+              "location": "steps\\comprar_passagem.steps.js:77"
+            },
             "result": {
-              "status": "undefined",
+              "status": "skipped",
               "duration": 0
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
-            "line": 30,
-            "name": "se contem a informação \"Amount\"como \"555 USD",
+            "line": 33,
+            "name": "se contem a informação \"Amount\"como \"555 USD\"",
             "result": {
               "status": "undefined",
               "duration": 0
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 74395500
             }
           }
         ],
@@ -428,44 +618,75 @@
       {
         "description": "",
         "id": "compra-de-passagem;compra-com-sucesso-ddt",
-        "keyword": "Scenario",
-        "line": 36,
+        "keyword": "Scenario Outline",
+        "line": 39,
         "name": "Compra com Sucesso DDT",
         "steps": [
           {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 162520900
+            }
+          },
+          {
             "arguments": [],
             "keyword": "Given ",
-            "line": 18,
+            "line": 20,
             "name": "que estou no site Blazedemo",
+            "match": {
+              "location": "steps\\comprar_passagem.steps.js:10"
+            },
             "result": {
-              "status": "undefined",
-              "duration": 0
+              "status": "passed",
+              "duration": 2135138300
             }
           },
           {
             "arguments": [],
             "keyword": "When ",
-            "line": 19,
-            "name": "seleciono a \"Boston\" e o \"New York\"",
+            "line": 21,
+            "name": "seleciono a origem como \"Boston\" e seleciono o destino como \"New York\"",
+            "match": {
+              "location": "steps\\comprar_passagem.steps.js:15"
+            },
             "result": {
-              "status": "undefined",
-              "duration": 0
+              "status": "passed",
+              "duration": 18642800
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 22,
+            "name": "clico no botao \"Find Flights\"",
+            "match": {
+              "location": "steps\\comprar_passagem.steps.js:21"
+            },
+            "result": {
+              "status": "failed",
+              "duration": 20002874100,
+              "error_message": "Error: function timed out, ensure the promise resolves within 20000 milliseconds\n    at Timeout.<anonymous> (C:\\Iterasys\\BlazeDemo147Adv\\node_modules\\@cucumber\\cucumber\\lib\\time.js:64:20)\n    at listOnTimeout (node:internal/timers:605:17)\n    at process.processTimers (node:internal/timers:541:7)"
             }
           },
           {
             "arguments": [],
             "keyword": "Then ",
-            "line": 20,
+            "line": 23,
             "name": "verifico o texto Flights from \"Boston\" to \"New York\"",
+            "match": {
+              "location": "steps\\comprar_passagem.steps.js:90"
+            },
             "result": {
-              "status": "undefined",
+              "status": "skipped",
               "duration": 0
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
-            "line": 21,
+            "line": 24,
             "name": "se a URL contem \"reserve\"",
             "result": {
               "status": "undefined",
@@ -475,67 +696,85 @@
           {
             "arguments": [],
             "keyword": "When ",
-            "line": 22,
+            "line": 25,
             "name": "seleciono o voo \"4346\" da companhia \"Lufthansa\"",
+            "match": {
+              "location": "steps\\comprar_passagem.steps.js:46"
+            },
             "result": {
-              "status": "undefined",
+              "status": "skipped",
               "duration": 0
             }
           },
           {
             "arguments": [],
             "keyword": "Then ",
-            "line": 23,
+            "line": 26,
             "name": "verifico se a url contem \"purchase\"",
+            "match": {
+              "location": "steps\\comprar_passagem.steps.js:39"
+            },
             "result": {
-              "status": "undefined",
+              "status": "skipped",
               "duration": 0
             }
           },
           {
             "arguments": [],
             "keyword": "When ",
-            "line": 24,
-            "name": "preencho o nome como \"John SMith\"",
-            "result": {
-              "status": "undefined",
-              "duration": 0
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 25,
-            "name": "seleciono a bandeira do cartão como \"Dinner's Club\"",
-            "result": {
-              "status": "undefined",
-              "duration": 0
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 26,
-            "name": "marco a opção \"remember me\"",
-            "result": {
-              "status": "undefined",
-              "duration": 0
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
             "line": 27,
-            "name": "clico no botão \"Purchase Flight\"",
+            "name": "preencho o nome como \"John Smith\"",
+            "match": {
+              "location": "steps\\comprar_passagem.steps.js:54"
+            },
             "result": {
-              "status": "undefined",
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 28,
+            "name": "seleciono a bandeira do cartão como \"Dinner's Club\"",
+            "match": {
+              "location": "steps\\comprar_passagem.steps.js:59"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 29,
+            "name": "marco a opção \"remember me\"",
+            "match": {
+              "location": "steps\\comprar_passagem.steps.js:64"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 30,
+            "name": "clico no botão \"Purchase Flight\"",
+            "match": {
+              "location": "steps\\comprar_passagem.steps.js:70"
+            },
+            "result": {
+              "status": "skipped",
               "duration": 0
             }
           },
           {
             "arguments": [],
             "keyword": "Then ",
-            "line": 28,
+            "line": 31,
             "name": "verfico se a url contem \"confirmation\"",
             "result": {
               "status": "undefined",
@@ -545,21 +784,32 @@
           {
             "arguments": [],
             "keyword": "And ",
-            "line": 29,
-            "name": "se exibe oa mensagem de agradecimento  \"Thank you for your purchase today!\"",
+            "line": 32,
+            "name": "se exibe a mensagem de agradecimento  \"Thank you for your purchase today!\"",
+            "match": {
+              "location": "steps\\comprar_passagem.steps.js:77"
+            },
             "result": {
-              "status": "undefined",
+              "status": "skipped",
               "duration": 0
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
-            "line": 30,
-            "name": "se contem a informação \"Amount\"como \"555 USD",
+            "line": 33,
+            "name": "se contem a informação \"Amount\"como \"555 USD\"",
             "result": {
               "status": "undefined",
               "duration": 0
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 84131900
             }
           }
         ],

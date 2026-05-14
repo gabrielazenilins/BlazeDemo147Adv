@@ -1,4 +1,5 @@
-export default class ReservePage {
+// export default class ReservePage {//padrao para type = module
+class ReservePage{
 
     constructor(page){
         this.page = page
@@ -26,7 +27,7 @@ export default class ReservePage {
         await this.page.waitForSelector(this.title)
         const titleSection = await this.page.textContent(this.title)
 
-        if(!titleSection.includes(`Flights from ${origin} to ${destination}:`)){
+        if(!titleSection.includes(message_origin_destination)){
             throw new Error('Titulo da pagina Reserve ausente ou diferente do esperado')
 
         }
@@ -44,3 +45,4 @@ export default class ReservePage {
 
     }
 
+module.exports = ReservePage //padrão quando tpe = commonjs

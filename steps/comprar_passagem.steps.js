@@ -1,93 +1,94 @@
 const { Given, When, Then } = require('@cucumber/cucumber')
+const {expect}= require('@playwright/test')
 // import {Given, When, Then, And} from '@cucumber/cucumber'
-// import HomePage from '../pages/home.page'
-// import ReservePage from '../pages/reserve.page'
-// import PurchasePage from '../pages/purchase.page'
-// import ConfirmationPage from '../pages/confirmation.page'
+// import this.homePage from '../pages/home.page'
+// import this.reservePage from '../pages/this.this.reservePage'
+// import this.purchasePage from '../pages/purchase.page'
+// import this.confirmationPage from '../pages/confirmation.page'
 
 //Home 
-Given('que estou no site Blazedemo', function ({page}) {
-    page.goto(HomePage.url) //Abre o browser nesta URL
-    HomePage.verify_welcome_message() //Confirma se aparece a mensagem
+Given('que estou no site Blazedemo', async function () {
+    await this.page.goto(this.homePage.url) //Abre o browser nesta URL
+    await this.homePage.verify_welcome_message() //Confirma se aparece a mensagem
+});
+
+When('seleciono a origem como {string} e seleciono o destino como {string}', async function (origin, destination) {
+    await this.homePage.select_route(origin, destination)
 });
 
 
-When('seleciono a origem como {string} e o destino como {string}', async function (origin, destination) {
-    await homePage.select_route(origin, destination)
-})
-
 // Versão que clica no botão a partir do texto escrito no botão
-When('clico no botao {string}', function (texto_botao) {
-    HomePage.click_find_flights(texto_botao)
+When('clico no botao {string}',{ timeout: 20000 }, async function (texto_botao) {
+    await this.homePage.click_find_flights(texto_botao)
 });
  
 // Exemplo conforme o cenário simples (sem o texto "Find Flghts")
 // Se for sempre clicar no botão olhando apenas o seletor
-When('clico no botao', function () {
+When('clico no botao',{ timeout: 20000 }, async function () {
     // Não precisari ter recebido o parametro, seria só dar instrução de clicar
-    HomePage.click_find_flights()
+   await  this.homePage.click_find_flights()
 });
 
 //Cenario simples - verifica a mensagem de cidades de origem e destino
-Then('verifico o texto {string}', function (message_origin_destination) {
-    ReservePage.verify_destination(message_origin_destination)
+Then('verifico o texto {string}', async function (message_origin_destination) {
+   await  this.reservePage.verify_destination(message_origin_destination)
 });
 
 
 //Serve para qualquer pagina
-Then('verifico se a url contem {string}', function (name_page) {
+Then('verifico se a url contem {string}', async function (pagina) {
     
-    expect(page).toHave(`/${name_page}\.php/`)
+     expect(this.page).toHaveURL(`/${pagina}\.php/`)
 
 });
 
 
-When('seleciono o voo {string} da companhia {string}', function (origin, destination) {
-    ReservePage.select_flights(flight,airline)
+When('seleciono o voo {string} da companhia {string}', async function (origin, destination) {
+   await this.reservePage.select_flights(flight,airline)
 
 });
 
 //Purchase
 
 
-When('preencho o nome como {string}', function (name) {
-PurchasePage.fill_name(name)
+When('preencho o nome como {string}', async function (name) {
+await this.purchasePage.fill_name(name)
 });
 
 
-When('seleciono a bandeira do cartão como {string}', function (card) {
-PurchasePage.select_card(card)
+When('seleciono a bandeira do cartão como {string}',async function (card) {
+await this.purchasePage.select_card(card)
 });
 
 
-When('marco a opção {string}', function (string) {
+When('marco a opção {string}', async function (string) {
     //Nao estamos usando o parametro que é recebido no bloco
-    PurchasePage.select_remember()
+ await   this.purchasePage.select_remember()
 });
 
 
-When('clico no botão {string}', function (string) {
+When('clico no botão {string}', async function (string) {
 //Nao estamos usando o parametro que é recebido no bloco
-    PurchasePage.buy_flight()
+   await  this.purchasePage.buy_flight()
 
 });
 
 
-Then('se exibe a mensagem de agradecimento  {string}', function (string) {
-expect(page.locator(ConfirmationPage.message)).toHaveText('Thank you for your purchase today!!')
+Then('se exibe a mensagem de agradecimento  {string}', async function (string) {
+await expect(this.page.locator(this.confirmationPage.message)).toHaveText('Thank you for your purchase today!!')
 });
 
 
-Then('se contem a informação {string}]como {string}', function (anount, price) {
+Then('se contem a informação {string}]como {string}', async function (anount, price) {
 //encontra a linha em que esta escrita a quantia e o preço
-    const line_price= page.locator('tr').filter({has: page.locator('td',{ hasText: amount})})
+    const line_price= await this.page.locator('tr').filter({has: this.page.locator('td',{ hasText: amount})})
 //na linha que contem o texto amount verifica se contem o preço
-    expect(line_price).toContainText(price)
+   await expect(line_price).toContainText(price)
 });
 
 // Esquema de Cenário- Verifica a mensagem contendo as duas cidades que recebe como parâmetro
-Then('verifico o texto Flights from {string} to {string}', function (origin, destination) {
-    expect(page.locator(ReservePage.title)).toHaveText (`Flights from'${origin} to ${destination}:`)
+Then('verifico o texto Flights from {string} to {string}', async function (origin, destination) {
+    await expect(this.page.locator(this.reservePage.title)).toHaveText (`Flights from'${origin} to ${destination}:`)
 
 });
 

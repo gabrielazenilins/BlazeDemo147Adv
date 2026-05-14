@@ -8,7 +8,7 @@ class HomePage { //padrão para type = commonjs
         this.title = 'h1'
         this.origin = '[name="fromPort"]'
         this.destination = '[name="toPort"]'
-        this.btnFindFlights = '.btn-primary'
+        this.btnFindFlights = 'btn btn-primary'
         this.url = 'https://www.blazedemo.com'
     }
 
