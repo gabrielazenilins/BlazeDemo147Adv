@@ -5,9 +5,9 @@ class PurchasePage {
         this.page = page
         this.url = '/purchase\.php/'
         this.name = '#inputName'
-        this.card = '#cardType'
+        this.card = '[name="cardType"]'
         this.remember = '#rememberMe'
-        this.btn_purchase_flight = '.btn-primary'
+        this.btn_purchase_flight = '.btn.btn-primary'
     }
 
 //Mapear as ações, seguindo o padrão, não inclui verificação 

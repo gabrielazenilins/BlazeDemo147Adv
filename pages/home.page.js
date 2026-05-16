@@ -8,7 +8,7 @@ class HomePage { //padrão para type = commonjs
         this.title = 'h1'
         this.origin = '[name="fromPort"]'
         this.destination = '[name="toPort"]'
-        this.btnFindFlights = 'btn btn-primary'
+        this.btnFindFlights = '.btn-primary'
         this.url = 'https://www.blazedemo.com'
     }
 
@@ -27,7 +27,7 @@ class HomePage { //padrão para type = commonjs
     }
 
     // Click using button text (parameter)
-    async click_find_flights_by_text(button_text){
+    async click_find_flights(button_text){
         await this.page.getByRole('button', { name: button_text }).click()
     }
 
@@ -43,4 +43,4 @@ class HomePage { //padrão para type = commonjs
     }
 }
 
-module.exports = HomePage //padrão quando tpe = commonjs
+module.exports = HomePage //padrão quando type = commonjs

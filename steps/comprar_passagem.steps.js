@@ -37,13 +37,13 @@ Then('verifico o texto {string}', async function (message_origin_destination) {
 
 //Serve para qualquer pagina
 Then('verifico se a url contem {string}', async function (pagina) {
-    
-     expect(this.page).toHaveURL(`/${pagina}\.php/`)
+
+await expect(this.page).toHaveURL(new RegExp(`${pagina}\\.php`))
 
 });
 
 
-When('seleciono o voo {string} da companhia {string}', async function (origin, destination) {
+When('seleciono o voo {string} da companhia {string}', async function (flight, airline) {
    await this.reservePage.select_flights(flight,airline)
 
 });
@@ -75,20 +75,19 @@ When('clico no botão {string}', async function (string) {
 
 
 Then('se exibe a mensagem de agradecimento  {string}', async function (string) {
-await expect(this.page.locator(this.confirmationPage.message)).toHaveText('Thank you for your purchase today!!')
+await expect(this.page.locator(this.confirmationPage.message)).toHaveText('Thank you for your purchase today!')
 });
 
 
-Then('se contem a informação {string}]como {string}', async function (anount, price) {
+Then('se contem a informação {string} como {string}', async function (amount, price) {
 //encontra a linha em que esta escrita a quantia e o preço
-    const line_price= await this.page.locator('tr').filter({has: this.page.locator('td',{ hasText: amount})})
+    const line_price=  this.page.locator('tr').filter({has: this.page.locator('td',{ hasText: amount})})
 //na linha que contem o texto amount verifica se contem o preço
    await expect(line_price).toContainText(price)
 });
 
 // Esquema de Cenário- Verifica a mensagem contendo as duas cidades que recebe como parâmetro
 Then('verifico o texto Flights from {string} to {string}', async function (origin, destination) {
-    await expect(this.page.locator(this.reservePage.title)).toHaveText (`Flights from'${origin} to ${destination}:`)
+    await expect(this.page.locator(this.reservePage.title)).toHaveText (`Flights from ${origin} to ${destination}:`)
 
 });
-

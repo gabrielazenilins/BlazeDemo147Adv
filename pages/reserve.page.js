@@ -1,4 +1,4 @@
-// export default class ReservePage {//padrao para type = module
+/// export default class ReservePage {//padrao para type = module
 class ReservePage{
 
     constructor(page){
