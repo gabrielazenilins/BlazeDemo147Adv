@@ -57,3 +57,12 @@ export default class HomePage tem que começar com o Maiusculo
     Diferenças de sintaxe conforme o type definido no package.json
     quando se coloca commonjs: ele quer que voce use const....= require ('...')
     quando se trabalha como module, ele quer que voce faça um import .... from ....
+
+    Sobre execução síncrona ( uma parte espera a outra ex: telefone) e assíncrona (a parte emissora não espera ex: msg de whatsapp)
+        Sem async/await: transação síncrona
+        Com async/await: transição assíncrona
+
+    Estamos usando 2 frameworks: 
+    -playwright é o vai controlar o browser --> timeout (msg especifica que pode explicar a causa)
+    -CucumberJs ajuda na organização --> timeout (msg generica que nao vai explicar a causa)
+    Situação da aula: funcionava sem o await e nao funcionava com o await

@@ -18,13 +18,13 @@ When('seleciono a origem como {string} e seleciono o destino como {string}', asy
 
 
 // Versão que clica no botão a partir do texto escrito no botão
-When('clico no botao {string}',{ timeout: 20000 }, async function (texto_botao) {
+When('clico no botao {string}', async function (texto_botao) {
     await this.homePage.click_find_flights(texto_botao)
 });
  
 // Exemplo conforme o cenário simples (sem o texto "Find Flghts")
 // Se for sempre clicar no botão olhando apenas o seletor
-When('clico no botao',{ timeout: 20000 }, async function () {
+When('clico no botao', async function () {
     // Não precisari ter recebido o parametro, seria só dar instrução de clicar
    await  this.homePage.click_find_flights()
 });
@@ -38,7 +38,7 @@ Then('verifico o texto {string}', async function (message_origin_destination) {
 //Serve para qualquer pagina
 Then('verifico se a url contem {string}', async function (pagina) {
 
-await expect(this.page).toHaveURL(new RegExp(`${pagina}\\.php`))
+await expect(this.page).toHaveURL(`/${pagina}\.php`)
 
 });
 
@@ -69,7 +69,7 @@ When('marco a opção {string}', async function (string) {
 
 When('clico no botão {string}', async function (string) {
 //Nao estamos usando o parametro que é recebido no bloco
-   await  this.purchasePage.buy_flight()
+  await  this.purchasePage.buy_flight()
 
 });
 
