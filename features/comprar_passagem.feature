@@ -2,7 +2,7 @@ Feature: Compra de Passagem
     Scenario: Compra com Sucesso 
         Given que estou no site Blazedemo
         When seleciono a origem como "São Paolo" e seleciono o destino como "London"
-        And clico no botao "Find Flights"
+        And clico no botao
         Then verifico o texto "Flights from São Paolo to London:"
         And verifico se a url contem "reserve"
         When seleciono o voo "9696" da companhia "Aer Lingus"

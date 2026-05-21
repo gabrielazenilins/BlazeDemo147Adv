@@ -1,4 +1,4 @@
-// export default class PurchasePage {//padrao para type = module
+/// export default class PurchasePage {//padrao para type = module
 class PurchasePage {
 
     constructor(page){

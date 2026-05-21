@@ -1,4 +1,3 @@
-
 // export default class HomePage { //padrao para type = module
 class HomePage { //padrão para type = commonjs
 
