@@ -9,11 +9,15 @@ const {expect}= require('@playwright/test')
 //Home 
 Given('que estou no site Blazedemo', async function () {
     await this.page.goto(this.homePage.url) //Abre o browser nesta URL
+    const screenshot = await this.page.screenshot({fullPage: true})
+    await this.attach(screenshot, 'image/png')
     await this.homePage.verify_welcome_message() //Confirma se aparece a mensagem
 });
 
 When('seleciono a origem como {string} e seleciono o destino como {string}', async function (origin, destination) {
     await this.homePage.select_route(origin, destination)
+    const screenshot = await this.page.screenshot({fullPage: true})
+    await this.attach(screenshot, 'image/png')
 });
 
 
@@ -58,12 +62,16 @@ await this.purchasePage.fill_name(name)
 
 When('seleciono a bandeira do cartão como {string}',async function (card) {
 await this.purchasePage.select_card(card)
+const screenshot = await this.page.screenshot({fullPage: true})
+    await this.attach(screenshot, 'image/png')
 });
 
 
 When('marco a opção {string}', async function (string) {
     //Nao estamos usando o parametro que é recebido no bloco
  await   this.purchasePage.select_remember()
+ const screenshot = await this.page.screenshot({fullPage: true})
+    await this.attach(screenshot, 'image/png')
 });
 
 
